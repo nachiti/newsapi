@@ -1,1 +1,1 @@
-# android-eservices-webrequests
+# android-eservices-webrequests-newsApi
