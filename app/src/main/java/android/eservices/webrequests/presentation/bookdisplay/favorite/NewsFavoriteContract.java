@@ -1,7 +1,7 @@
 
 package android.eservices.webrequests.presentation.bookdisplay.favorite;
 
-        import android.eservices.webrequests.presentation.bookdisplay.favorite.adapter.NewsDetailViewModel;
+import android.eservices.webrequests.presentation.bookdisplay.favorite.adapter.NewsDetailViewModel;
 
         import java.util.List;
 

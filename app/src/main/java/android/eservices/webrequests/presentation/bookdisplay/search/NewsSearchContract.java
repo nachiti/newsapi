@@ -21,9 +21,9 @@ public interface NewsSearchContract {
 
         void cancelSubscription();
 
-        void addNewsToFavorite(String bookId);
+        void addNewsToFavorite(String articlesId);
 
-        void removeNewsFromFavorites(String bookId);
+        void removeNewsFromFavorites(String articlesId);
 
         void detachView();
     }

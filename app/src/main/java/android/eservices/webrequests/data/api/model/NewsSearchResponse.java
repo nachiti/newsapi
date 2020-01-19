@@ -6,12 +6,12 @@ import java.util.List;
 
 public class NewsSearchResponse {
 
-    @SerializedName("items") // ***** > da fare
-    List<Headlines> headlinesList;
+    @SerializedName("articles") // ***** > da fare
+    List<Articles> headlinesList;
 
     int totalItems;
 
-    public List<Headlines> getNewsList() {
+    public List<Articles> getNewsList() {
         return headlinesList;
     }
 

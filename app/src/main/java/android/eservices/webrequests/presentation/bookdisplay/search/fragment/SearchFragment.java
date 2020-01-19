@@ -119,11 +119,11 @@ public class SearchFragment extends Fragment implements NewsSearchContract.View,
     }
 
     @Override
-    public void onFavoriteToggle(String bookId, boolean isFavorite) {
+    public void onFavoriteToggle(String articlesId, boolean isFavorite) {
         if (isFavorite) {
-            newsSearchPresenter.addNewsToFavorite(bookId);
+            newsSearchPresenter.addNewsToFavorite(articlesId);
         } else {
-            newsSearchPresenter.removeNewsFromFavorites(bookId);
+            newsSearchPresenter.removeNewsFromFavorites(articlesId);
         }
     }
 

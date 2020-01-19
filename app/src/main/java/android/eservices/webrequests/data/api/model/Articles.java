@@ -4,16 +4,42 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Articles {
+        @SerializedName("id")
+        private String id;
+        @SerializedName("source")
+        private Source source;
+        @SerializedName("author")
+        private String author;
+        @SerializedName("description")
+        private String description;
+        @SerializedName("title")
+        private String titre;
+        @SerializedName("url")
+        private String url;
+        @SerializedName("urlToImage")
+        private String urlToimage;
+        @SerializedName("publishedAt")
+        private String publishedAt;
 
-    private Source source;
 
-    private String author;
-    private String description;
-    private String titre;
-    private String url;
-    private String urlToimage;
-    private String publishedAt;
+    private boolean isFavorite;
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setFavorite() {
+        isFavorite = true;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
 
     public Source getSource() {
         return source;

@@ -1,7 +1,7 @@
 
 package android.eservices.webrequests.data.repository.bookdisplay;
 
-        import android.eservices.webrequests.data.api.model.Headlines;
+        import android.eservices.webrequests.data.api.model.Articles;
         import android.eservices.webrequests.data.api.model.NewsSearchResponse;
         import android.eservices.webrequests.data.entity.NewsEntity;
         import android.eservices.webrequests.data.repository.bookdisplay.local.NewsDisplayLocalDataSource;
@@ -38,9 +38,9 @@ public class NewsDisplayDataRepository implements NewsDisplayRepository {
                 .zipWith(newsDisplayLocalDataSource.getFavoriteIdList(), new BiFunction<NewsSearchResponse, List<String>, NewsSearchResponse>() {
                     @Override
                     public NewsSearchResponse apply(NewsSearchResponse newsSearchResponse, List<String> idList) throws Exception {
-                        for (Headlines headlines : newsSearchResponse.getNewsList()) {
-                            if (idList.contains(headlines.getId())) {
-                                headlines.setFavorite();
+                        for (Articles articles : newsSearchResponse.getNewsList()) {
+                            if (idList.contains(articles.getId())) {
+                                articles.setFavorite();
                             }
                         }
                         return newsSearchResponse;
@@ -56,10 +56,10 @@ public class NewsDisplayDataRepository implements NewsDisplayRepository {
     @Override
     public Completable addNewsToFavorites(String bookId) {
         return newsDisplayRemoteDataSource.getNewsDetails(bookId)
-                .map(new Function<Headlines, NewsEntity>() {
+                .map(new Function<Articles, NewsEntity>() {
                     @Override
-                    public NewsEntity apply(Headlines headlines) throws Exception {
-                        return newsToNewsEntityMapper.map(headlines);
+                    public NewsEntity apply(Articles articles) throws Exception {
+                        return newsToNewsEntityMapper.map(articles);
                     }
                 })
                 .flatMapCompletable(new Function<NewsEntity, CompletableSource>() {

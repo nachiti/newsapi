@@ -2,6 +2,7 @@ package android.eservices.webrequests.data.repository.bookdisplay.remote;
 
 import android.eservices.webrequests.NewsApplication;
 import android.eservices.webrequests.data.api.NewsDisplayService;
+import android.eservices.webrequests.data.api.model.Articles;
 import android.eservices.webrequests.data.api.model.Headlines;
 import android.eservices.webrequests.data.api.model.NewsSearchResponse;
 
@@ -19,7 +20,8 @@ public class NewsDisplayRemoteDataSource {
         return newsDisplayService.searchNews(keywords, NewsApplication.API_KEY);
     }
 
-    public Single<Headlines> getNewsDetails(String bookId) {
+    public Single<Articles> getNewsDetails(String bookId) {
+       // return newsDisplayService.getSource(bookId, NewsApplication.API_KEY);
         return newsDisplayService.getNews(bookId, NewsApplication.API_KEY);
     }
 }

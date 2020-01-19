@@ -30,8 +30,8 @@ public class NewsEntityToDetailViewModelMapper {
 
     public List<NewsDetailViewModel> map(List<NewsEntity> newsList) {
         List<NewsDetailViewModel> newsItemViewModelList = new ArrayList<>();
-        for (NewsEntity headlines : newsList) {
-            newsItemViewModelList.add(map(headlines));
+        for (NewsEntity articles : newsList) {
+            newsItemViewModelList.add(map(articles));
         }
         return newsItemViewModelList;
     }

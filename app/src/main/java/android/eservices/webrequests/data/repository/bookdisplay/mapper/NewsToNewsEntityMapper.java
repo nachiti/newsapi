@@ -2,28 +2,30 @@
 
 package android.eservices.webrequests.data.repository.bookdisplay.mapper;
 
+        import android.eservices.webrequests.data.api.model.Articles;
         import android.eservices.webrequests.data.api.model.Headlines;
         import android.eservices.webrequests.data.entity.NewsEntity;
         import android.text.TextUtils;
 
 public class NewsToNewsEntityMapper {
 
-    public NewsEntity map(Headlines headlines) {
+    public NewsEntity map(Articles articles) {
 
         NewsEntity newsEntity = new NewsEntity();
-        newsEntity.setTitle(headlines.getArticlesInfo().getTitre());
+        newsEntity.setTitle(articles.getTitre());
 
-        if (headlines.getArticlesInfo().getAuthor() == null) {
+        if (articles.getAuthor() == null) {
             newsEntity.setAuthors("N.C.");
         } else {
-            //newsEntity.setAuthors(TextUtils.join(", ", headlines.getArticlesInfo().getAuthor()));
-            headlines.getArticlesInfo().getAuthor();
+            //newsEntity.setAuthors(TextUtils.join(", ", articles.getAuthor()));
+            articles.getAuthor();
         }
 
-        newsEntity.setDescription(headlines.getArticlesInfo().getDescription());
-        newsEntity.setId(headlines.getArticlesInfo().getSource().getId());
-        newsEntity.setPublishedDate(headlines.getArticlesInfo().getPublishedAt());
-        newsEntity.setThumbUrl(headlines.getArticlesInfo().getUrl());
+        newsEntity.setDescription(articles.getDescription());
+        newsEntity.setId(articles.getSource().getId());
+        newsEntity.setPublishedDate(articles.getPublishedAt());
+        newsEntity.setThumbUrl(articles.getUrlToimage());
+        newsEntity.setPublishedDate(articles.getPublishedAt());
 
 
         return newsEntity;

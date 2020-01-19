@@ -46,8 +46,8 @@ public class NewsSearchPresenter implements NewsSearchContract.Presenter {
     }
 
     @Override
-    public void addNewsToFavorite(String bookId) {
-        compositeDisposable.add(newsDisplayRepository.addNewsToFavorites(bookId)
+    public void addNewsToFavorite(String articlesId) {
+        compositeDisposable.add(newsDisplayRepository.addNewsToFavorites(articlesId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableCompletableObserver() {

@@ -3,7 +3,7 @@ package android.eservices.webrequests.presentation.bookdisplay.search.adapter;
 
 public class NewsItemViewModel {
 
-    private String bookId;
+    private String articlesId;
     private String iconUrl;
     private String newsTitle;
     private String newsAuthors;
@@ -34,11 +34,11 @@ public class NewsItemViewModel {
     }
 
     public String getNewsId() {
-        return bookId;
+        return articlesId;
     }
 
     public void setNewsId(String bookId) {
-        this.bookId = bookId;
+        this.articlesId = bookId;
     }
 
     public boolean isFavorite() {

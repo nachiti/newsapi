@@ -9,13 +9,11 @@ import androidx.room.PrimaryKey;
 public class NewsEntity {
     @NonNull
     @PrimaryKey
-    public String id;//source
+    public String id;
     public String title;
     public String authors;
     private String description;
     private String thumbUrl;
-
-
 
     @ColumnInfo(name = "published_date")
     private String publishedDate;
